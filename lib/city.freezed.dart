@@ -21,7 +21,6 @@ City _$CityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$City {
   String get name => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +32,7 @@ abstract class $CityCopyWith<$Res> {
   factory $CityCopyWith(City value, $Res Function(City) then) =
       _$CityCopyWithImpl<$Res, City>;
   @useResult
-  $Res call({String name, String slug});
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -50,16 +49,11 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
   @override
   $Res call({
     Object? name = null,
-    Object? slug = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -72,7 +66,7 @@ abstract class _$$CityImplCopyWith<$Res> implements $CityCopyWith<$Res> {
       __$$CityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String slug});
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -86,16 +80,11 @@ class __$$CityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? slug = null,
   }) {
     return _then(_$CityImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -104,19 +93,17 @@ class __$$CityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CityImpl implements _City {
-  _$CityImpl({required this.name, required this.slug});
+  _$CityImpl({required this.name});
 
   factory _$CityImpl.fromJson(Map<String, dynamic> json) =>
       _$$CityImplFromJson(json);
 
   @override
   final String name;
-  @override
-  final String slug;
 
   @override
   String toString() {
-    return 'City(name: $name, slug: $slug)';
+    return 'City(name: $name)';
   }
 
   @override
@@ -124,13 +111,12 @@ class _$CityImpl implements _City {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CityImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.slug, slug) || other.slug == slug));
+            (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, slug);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +133,12 @@ class _$CityImpl implements _City {
 }
 
 abstract class _City implements City {
-  factory _City({required final String name, required final String slug}) =
-      _$CityImpl;
+  factory _City({required final String name}) = _$CityImpl;
 
   factory _City.fromJson(Map<String, dynamic> json) = _$CityImpl.fromJson;
 
   @override
   String get name;
-  @override
-  String get slug;
   @override
   @JsonKey(ignore: true)
   _$$CityImplCopyWith<_$CityImpl> get copyWith =>

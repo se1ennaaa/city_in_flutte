@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 part 'city.freezed.dart';
 part 'city.g.dart';
 
@@ -7,7 +6,6 @@ part 'city.g.dart';
 class City with _$City {
   factory City({
     required String name,
-    required String slug,
   }) = _City;
 
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
