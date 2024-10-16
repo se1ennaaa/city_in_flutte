@@ -6,7 +6,7 @@ class CityRepository {
 
   Future<List<City>> fetchCities({String? search}) async {
     final response = await _dio.get(
-      'https://odigital.pro/locations/cities/',
+      'https://odigital.pro/football_fields_api/games/',
       queryParameters: search != null ? {'search': search} : null,
     );
 

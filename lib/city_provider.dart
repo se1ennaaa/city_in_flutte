@@ -21,7 +21,7 @@ class CityListNotifier extends StateNotifier<AsyncValue<List<City>>> {
   Future<void> fetchCities() async {
     try {
       // Загр данные из API
-      final response = await Dio().get('https://odigital.pro/locations/cities/');
+      final response = await Dio().get('football_fields_api/games/');
       List<City> cities = (response.data as List).map((city) => City.fromJson(city)).toList();
 
       // Сохраняем данные в локальное хранилище
